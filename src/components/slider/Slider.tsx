@@ -40,7 +40,7 @@ export default function Slider({ items }: Props) {
         >
             {items.map((item, i) => (
                 <SwiperSlide key={i} >
-                    <div className="flex flex-col w-96 mx-auto">
+                    <div className="flex flex-col w-80 mx-auto">
                         <img src={item.url} className="h-64 px-6" alt="" />
                         <h2 className="my-2 text-2xl ml-5">{item.cut ? item?.cut : item?.light}</h2>
                         <p className="mx-5">{item.desc}</p>
