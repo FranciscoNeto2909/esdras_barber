@@ -1,10 +1,15 @@
+import { useState } from 'react'
 import './App.css'
 import Slider from './components/slider/Slider'
 import { cuts } from './data/cuts'
 import { lights } from './data/lights'
 
 export default function App() {
+  const [navItem, setNavItem] = useState("home")
 
+  function handleNavigate(item:string) {
+    setNavItem(item)
+  }
   return (
     <>
       <header className='hidden  w-full h-12 px-4 items-end justify-between fixed top-0 z-20 bg-[#1F2526] md:visible md:flex'>
@@ -12,14 +17,14 @@ export default function App() {
           <img src="" alt="" />
         </div>
         <ul className='h-full flex items-end gap-6 mr-20 text-white'>
-          <li className='pb-2 cursor-pointer border-b border-b-teal-600'>
-            <a href="#home">Inicio</a>
+          <li className={`pb-2 cursor-pointer border-b ${navItem === "home" ? "border-b-teal-600" : "border-[#1F2526]"}`}>
+            <a href="#home" onClick={() => handleNavigate("home")}>Inicio</a>
           </li>
-          <li className='pb-2 cursor-pointer border-b border-[#1F2526]'>
-            <a href="#cuts">Cortes</a>
+          <li className={`pb-2 cursor-pointer border-b ${navItem === "cuts" ? "border-b-teal-600" : "border-[#1F2526]"}`}>
+            <a href="#cuts" onClick={() => handleNavigate("cuts")}>Cortes</a>
           </li>
-          <li className='pb-2 cursor-pointer border-b border-[#1F2526]'>
-            <a href="#lights">Luzes</a>
+          <li className={`pb-2 cursor-pointer border-b ${navItem === "lights" ? "border-b-teal-600" : "border-[#1F2526]"}`}>
+            <a href="#lights" onClick={() => handleNavigate("lights")}>Luzes</a>
           </li>
         </ul>
       </header>
@@ -31,8 +36,8 @@ export default function App() {
             <div className='bg-teal-500 h-40 w-52 absolute left-7 top-32 z-0 md:top-44 md:left-6'></div>
           </div>
           <div className='max-w-xl px-2 md:p-0'>
-            <h1 className='text-3xl mb-4' style={{ fontFamily: 'Lugrasimo, cursive' }}>Barber shop Esdras Santos</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, culpa sunt ratione tenetur a voluptates, nisi libero eum ducimus iste quam id! Commodi sapiente rem autem doloribus facere reiciendis eum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus.</p>
+            <h1 className='text-3xl mb-4 pl-2' style={{ fontFamily: 'Lugrasimo, cursive' }}>Barber shop Esdras Santos</h1>
+            <p className='px-2'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, culpa sunt ratione tenetur a voluptates, nisi libero eum ducimus iste quam id! Commodi sapiente rem autem doloribus facere reiciendis eum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus.</p>
             <div className='flex gap-1 py-2'>
               <p>Sucatinga, Ce</p>
               <img src="https://images.vexels.com/media/users/3/141915/isolated/preview/fa18fbc911311b5371870c880fa5f75a-pin-de-localizacao.png" className='h-5' alt="" />

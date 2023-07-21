@@ -35,7 +35,6 @@ export default function Slider({ items }: Props) {
             pagination={{
                 dynamicBullets: true,
             }}
-            navigation={true}
             modules={[Pagination, Navigation]}
         >
             {items.map((item, i) => (
