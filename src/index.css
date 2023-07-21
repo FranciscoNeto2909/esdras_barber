@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    /* background:url("https://img.freepik.com/vetores-premium/barba-de-barbearia-e-padrao-perfeito-de-corte-de-cabelo-de-homem_8071-29485.jpg"); */
+    background-color: #1F2526;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
